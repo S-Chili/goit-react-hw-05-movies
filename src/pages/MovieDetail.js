@@ -1,8 +1,7 @@
-import { Suspense, useEffect, useState } from 'react';
-import { Outlet, useParams } from 'react-router-dom';
+import {  useEffect, useState } from 'react';
+import {  useParams } from 'react-router-dom';
 import { getMovieDetails } from '../API/GetMovies';
 import { Details } from '../components/Details/Details';
-import Loader from '../components/Loader/Loader';
 
 function MovieDetail() {
   const [movie, setMovie] = useState(null);
@@ -27,9 +26,6 @@ function MovieDetail() {
   return (
     <>
       <Details data={movie} />
-      <Suspense fallback={<Loader />}>
-        <Outlet />
-      </Suspense>
     </>
   );
 }
