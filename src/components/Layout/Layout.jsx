@@ -3,7 +3,7 @@ import css from './Layout.module.css'
 
 
 
-export const Layout = () => {
+const Layout = () => {
     const location = useLocation();
     const isActive = (path) => location.pathname === path;
     return (
@@ -28,3 +28,5 @@ export const Layout = () => {
       </div>
     );
   }
+
+export default Layout
