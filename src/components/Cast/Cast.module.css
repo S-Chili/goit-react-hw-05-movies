@@ -1,0 +1,33 @@
+.loaderContainer {
+    position: 'relative';
+}
+
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: calc(100vw - 48px);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.castItem {
+  margin-bottom: 20px;
+}
+
+.cast_image {
+  display: block;
+  min-width: 200px;
+  min-height: 300px;
+  display: block;
+  object-fit: cover;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.castName {
+    font-weight: 600;
+}

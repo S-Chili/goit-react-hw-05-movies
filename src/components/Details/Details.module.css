@@ -1,0 +1,96 @@
+.detailsSect {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.button {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding: 5px 15px;
+    color: #f92056;
+    border: 1px solid #3A374C;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: .3s linear;
+}
+.button:before, .button:after, .linkContent:before, .linkContent:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 15px;
+    height: 15px;
+    transition: .3s linear;
+}
+.button:before {
+    left: -1px;
+    top: -1px;
+    border-left: 1px solid #f92056;
+    border-top: 1px solid #f92056;
+}
+.button:after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 1px solid #f92056;
+    border-right: 1px solid #f92056;
+}
+.linkContent:after {
+    right: -1px;
+    top: -1px;
+    border-right: 1px solid #f92056;
+    border-top: 1px solid #f92056;
+}
+.linkContent:before {
+    left: -1px;
+    bottom: -1px;
+    border-bottom: 1px solid #f92056;
+    border-left: 1px solid #f92056;
+}
+.button:hover {
+    color: #f92056;
+    border-color: #f92056;
+}
+
+.moviesInfo {
+    margin: 15px auto;
+}
+
+.moviePoster {
+    width: 300px;
+    height: auto;
+}
+
+.userScore {
+    color: #f92056;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.detailsDescr {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.subSect {
+    margin-left: 15px;
+}
+
+.subTitle {
+    margin-left: 40px;
+    font-weight: 700;
+    margin-bottom: 0;
+
+}
+
+.layoutList {
+  display: inline-flex;
+  list-style: none;
+}
+
+.layoutItem {
+  margin-right: 10px;
+}

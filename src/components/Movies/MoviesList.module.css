@@ -1,0 +1,20 @@
+.sectionMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.titleList {
+  padding: 20px;
+  letter-spacing: 0.2em;
+  border: 2px solid;
+  border-image: linear-gradient(20deg, #f92056 38%, #00deff 65%);
+  border-image-slice: 2;
+}
+
+.moviesItem {
+    margin-bottom: 10px;
+    
+}
