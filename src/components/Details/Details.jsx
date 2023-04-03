@@ -2,14 +2,10 @@ import { Link, useLocation, Outlet } from 'react-router-dom';
 import { BsArrowLeft } from 'react-icons/bs';
 import css from './Details.module.css'
 
-
-
 export function Details({ data }) {
   const { poster_path, title, release_date, vote_average, overview, genres } =
     data;
   const rating = Math.round(vote_average * 10) + '%';
-  //const genresList = genres.map(genre => genre.name).join(' ');
-  //const year = release_date.split('-')[0];
   const location = useLocation();
   const from = location.state.from;
   let genresList = '';

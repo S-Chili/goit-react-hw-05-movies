@@ -17,7 +17,7 @@ export const getTrendingMovies = async () => {
   return data.results;
 };
 
-export const fetchQueryMovies = async query => {
+export const getQueryMovies = async query => {
   const result = await fetch(
     `${BASE_URL}${END_POINTS.querySearch}?api_key=${API_KEY}&query=${query}`
   );

@@ -7,10 +7,10 @@ export const Layout = () => {
             <header>
                 <ul className={css.layoutList}>
                     <li className={css.layoutItem}>
-                        <NavLink to='/' className={css.button}><span className={css.linkContent}>Home</span></NavLink>
+                        <NavLink to='/' className={css.button} activeclassname={css.activeLink}><span className={css.linkContent}>Home</span></NavLink>
                     </li>
                     <li className={css.layoutItem}>
-                        <NavLink to='/movies' className={css.button}><span className={css.linkContent}>Movies</span></NavLink>
+                        <NavLink to='/movies' className={css.button} activeclassname={css.activeLink}><span className={css.linkContent}>Movies</span></NavLink>
                     </li>
                 </ul>
             </header>

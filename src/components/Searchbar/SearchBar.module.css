@@ -1,23 +1,22 @@
-.layoutList {
-  display: inline-flex;
-  list-style: none;
-}
-
-.layoutItem {
-  margin-right: 10px;
+.searchForm {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .button {
     text-decoration: none;
     display: inline-block;
     position: relative;
-    padding: 15px 30px;
+    padding: 5px 15px;
     color: #f92056;
     border: 1px solid #3A374C;
     font-size: 14px;
     font-weight: 700;
     white-space: nowrap;
     transition: .3s linear;
+    background-color: #ffffff;
 }
 .button:before, .button:after {
     content: "";
@@ -39,19 +38,8 @@
     border-bottom: 1px solid #f92056;
     border-right: 1px solid #f92056;
 }
-.linkContent:after {
-    right: -1px;
-    top: -1px;
-    border-right: 1px solid #f92056;
-    border-top: 1px solid #f92056;
-}
-.button:hover {
-    color: #f92056;
-    border-color: #f92056;
-}
 
-.activeLink {
-    color: #f92056;
-    border-color: #f92056;
-    font-weight: bold;
+.searchInput {
+    padding: 5px 15px;
+    width: 250px;
 }
