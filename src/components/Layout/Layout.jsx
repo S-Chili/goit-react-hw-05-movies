@@ -1,7 +1,6 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import css from './Layout.module.css'
-
-
+import PropTypes from 'prop-types';
 
 const Layout = () => {
     const location = useLocation();
@@ -31,3 +30,7 @@ const Layout = () => {
   }
 
 export default Layout
+
+Layout.propTypes = {
+    children: PropTypes.node,
+  };

@@ -1,6 +1,7 @@
 import { Link, useLocation, Outlet } from 'react-router-dom';
 import { BsArrowLeft } from 'react-icons/bs';
 import css from './Details.module.css'
+import PropTypes from 'prop-types';
 
 export function Details({ data }) {
   const { poster_path, title, release_date, vote_average, overview, genres } =
@@ -57,3 +58,22 @@ export function Details({ data }) {
     </>
   );
 }
+
+Details.propTypes = {
+  data: PropTypes.shape({
+    poster_path: PropTypes.string,
+    title: PropTypes.string,
+    release_date: PropTypes.string,
+    vote_average: PropTypes.number,
+    overview: PropTypes.string,
+    genres: PropTypes.oneOfType([
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number,
+          name: PropTypes.string,
+        })
+      ),
+      PropTypes.string,
+    ]),
+  }).isRequired,
+};

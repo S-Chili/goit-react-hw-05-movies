@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { getMovieCredits } from 'API/GetMovies';
 import Loader from 'components/Loader/Loader';
 import css from './Cast.module.css'
+import PropTypes from 'prop-types';
+
 
 function Cast() {
   const { movieId } = useParams()
@@ -54,3 +56,7 @@ function Cast() {
 }
 
 export default Cast;
+
+Cast.propTypes = {
+  movieId: PropTypes.string,
+};

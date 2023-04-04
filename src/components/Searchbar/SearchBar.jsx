@@ -1,5 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import css from './SearchBar.module.css'
+import PropTypes from 'prop-types';
 
 export function SearchBar({ query }) {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -39,3 +40,7 @@ export function SearchBar({ query }) {
 }
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+    query: PropTypes.func.isRequired
+  };
