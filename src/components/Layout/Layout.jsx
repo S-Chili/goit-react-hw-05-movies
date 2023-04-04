@@ -6,6 +6,7 @@ import css from './Layout.module.css'
 const Layout = () => {
     const location = useLocation();
     const isActive = (path) => location.pathname === path;
+    const isActiveMovies = (path) => location.pathname.startsWith(path);
     return (
       <div>
         <header>
@@ -16,7 +17,7 @@ const Layout = () => {
               </Link>
             </li>
             <li className={css.layoutItem}>
-              <Link to='/movies' className={css.button} style={isActive("/movies") ? {color: '#f92056'} : {}}>
+              <Link to='/movies' className={css.button} style={isActiveMovies("/movies") ? {color: '#f92056'} : {}}>
                 <span className={css.linkContent}>Movies</span>
               </Link>
             </li>
