@@ -8,7 +8,7 @@ export function Details({ data }) {
     data;
   const rating = Math.round(vote_average * 10) + '%';
   const location = useLocation();
-  const from = location.state.from;
+  const from = location?.state?.from ?? '/';
   let genresList = '';
   if (genres) {
     const genresArray = Array.isArray(genres) ? genres : Object.values(genres);
