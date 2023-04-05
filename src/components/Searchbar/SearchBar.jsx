@@ -1,46 +1,64 @@
 import { useSearchParams } from 'react-router-dom';
-import css from './SearchBar.module.css'
+import css from './SearchBar.module.css';
 import PropTypes from 'prop-types';
+import { useState, useEffect } from 'react';
 
-export function SearchBar({ query }) {
-    const [searchParams, setSearchParams] = useSearchParams();
+function SearchBar({ query }) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState(searchParams.get('query') || '');
+  const [searchDone, setSearchDone] = useState(false); 
 
-    const handleNameChange = e => {
-        setSearchParams({ query: e.currentTarget.value.toLowerCase() });
-    };
+  useEffect(() => {
+    setSearchQuery(searchParams.get('query') || '');
+  }, [searchParams]);
 
-    const handleSubmit = e => {
-        e.preventDefault();
+  const handleNameChange = (e) => {
+    setSearchQuery(e.currentTarget.value.toLowerCase());
+  };
 
-        if (searchParams.get('query').trim() === '') {
-            return alert('Введіть назву фільму для пошуку!');
-        }
+  const handleSearch = (e) => {
+    e.preventDefault();
 
-        query(searchParams.get('query'));
-        setSearchParams({ query: '' });
-    };
-    
-    return (
-        <form onSubmit={handleSubmit} className={css.searchForm}>
-            <button type="submit" className={css.button}>
-                <span>Search</span>
-            </button>
-            <input
-                type="text"
-                name='searchParams'
-                autoComplete="off"
-                autoFocus
-                placeholder="Search movies"
-                value={searchParams.get('query') ? searchParams.get('query') : ""}
-                onChange={handleNameChange}
-                className={css.searchInput}
-            />
-        </form>
-    )
+    const trimmedQuery = searchQuery.trim();
+
+    if (trimmedQuery === '') {
+      return alert('Введіть назву фільму для пошуку!');
+    }
+
+    query(trimmedQuery);
+    setSearchParams({ query: trimmedQuery });
+    setSearchDone(true); 
+  };
+
+  const handleInputClick = () => {
+    if (searchDone) {
+      setSearchQuery(''); 
+      setSearchDone(false); 
+    }
+  };
+
+  return (
+    <form onSubmit={handleSearch} className={css.searchForm}>
+      <button type="submit" className={css.button}>
+        <span>Search</span>
+      </button>
+      <input
+        type="text"
+        name="searchParams"
+        autoComplete="off"
+        autoFocus
+        placeholder="Search movies"
+        value={searchQuery}
+        onClick={handleInputClick} 
+        onChange={handleNameChange}
+        className={css.searchInput}
+      />
+    </form>
+  );
 }
 
 export default SearchBar;
 
 SearchBar.propTypes = {
-    query: PropTypes.func.isRequired
-  };
+  query: PropTypes.func.isRequired,
+};
