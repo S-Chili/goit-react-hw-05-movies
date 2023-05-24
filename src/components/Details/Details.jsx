@@ -23,19 +23,21 @@ export function Details({ data }) {
           <BsArrowLeft />
           <span className={css.linkContent}>Go back</span>
         </Link>
-        <div className={css.moviesInfo}>
-          <img
-            src={`https://image.tmdb.org/t/p/w200/${poster_path}`}
-            alt={title}
-            className={css.moviePoster}
-          />
-          <div>
-              <h2>{`${title}${year && ` (${year})`}`}</h2>
-              <p className={css.userScore}>User score: {rating}</p>
-              <h3>Overview</h3>
-              <p className={css.detailsDescr}>{overview}</p>
-              <h3>Genres</h3>
-              <p>{genresList}</p>
+        <div className={css.moviesUI}>
+          <div className={css.moviesPoster}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+              alt={title}
+              className={css.moviePoster}
+            />
+          </div>
+          <div className={css.moviesInfo}>
+            <h2>{`${title}${year && ` (${year})`}`}</h2>
+            <p className={css.userScore}>User score: {rating}</p>
+            <h3>Overview</h3>
+            <p className={css.detailsDescr}>{overview}</p>
+            <h3>Genres</h3>
+            <p>{genresList}</p>
           </div>
         </div>
       </section>

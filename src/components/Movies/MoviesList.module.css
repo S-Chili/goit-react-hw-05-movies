@@ -7,14 +7,20 @@
 }
 
 .titleList {
-  padding: 20px;
-  letter-spacing: 0.2em;
-  border: 2px solid;
-  border-image: linear-gradient(20deg, #f92056 38%, #00deff 65%);
-  border-image-slice: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px auto 10px;
+  max-width: calc(100vw - 48px);
+  padding: 0;
 }
 
 .moviesItem {
-    margin-bottom: 10px;
-    
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.posterImage {
+  width: 250px;
+  height: auto;
 }

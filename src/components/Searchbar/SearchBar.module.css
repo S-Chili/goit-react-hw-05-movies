@@ -16,7 +16,7 @@
     font-weight: 700;
     white-space: nowrap;
     transition: .3s linear;
-    background-color: #ffffff;
+    background-color: #383535e2;
 }
 .button:before, .button:after {
     content: "";
@@ -42,4 +42,6 @@
 .searchInput {
     padding: 5px 15px;
     width: 250px;
+    color: pink;
+    background-color: #38353589;
 }

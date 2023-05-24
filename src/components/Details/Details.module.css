@@ -7,6 +7,9 @@
 }
 
 .button {
+    display: flex;
+    margin-right: auto;
+    margin-left: 40px;
     text-decoration: none;
     display: inline-block;
     position: relative;
@@ -18,6 +21,7 @@
     white-space: nowrap;
     transition: .3s linear;
 }
+
 .button:before, .button:after, .linkContent:before, .linkContent:after {
     content: "";
     position: absolute;
@@ -55,12 +59,24 @@
     border-color: #f92056;
 }
 
+.moviesUI {
+    display: flex;
+    align-items: center;
+   justify-content: center;
+}
+
 .moviesInfo {
     margin: 15px auto;
+
+}
+
+.moviesPoster {
+    margin: 15px auto;
+    margin-left: 40px;
 }
 
 .moviePoster {
-    width: 300px;
+    width: 400px;
     height: auto;
 }
 

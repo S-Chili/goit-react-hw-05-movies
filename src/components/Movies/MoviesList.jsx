@@ -10,7 +10,15 @@ export function MoviesList({ data, title, location }) {
         {data.map(movie => (
           <li key={movie.id} className={css.moviesItem}>
             <Link to={`/movies/${movie.id}`} state={{ from: location }}>
-              {movie.name ?? movie.title}
+            {movie.poster_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  alt={movie.title}
+                  className={css.posterImage}
+                />
+              ) : (
+                movie.name
+              )}
             </Link>
           </li>
         ))}
@@ -22,6 +30,7 @@ export function MoviesList({ data, title, location }) {
 MoviesList.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
+      poster_path: PropTypes.string,
       id: PropTypes.number.isRequired,
       name: PropTypes.string,
       title: PropTypes.string.isRequired,
